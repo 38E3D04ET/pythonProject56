@@ -1,0 +1,18 @@
+{% extends 'flatpages/default.html' %}
+
+{% load censor %}
+
+{% block title %}
+<h1>Whole_news</h1>
+{% endblock title %}
+
+{% block content %}
+
+<h1>{{ Whole_news.data|date:'d M Y, H:m'}}</h1>
+
+<h1>{{ Whole_news.name|censor }}</h1>
+
+<hr>
+
+{{ Whole_news.description|truncatewords:284|censor }}
+{% endblock content %}
